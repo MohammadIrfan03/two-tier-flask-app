@@ -1,10 +1,16 @@
 pipeline{
-    agent any;
-    
+    agent{
+        label 'dev'
+    }
     stages{
         stage('Code Checkout'){
             steps{
                 git 'https://github.com/MohammadIrfan03/two-tier-flask-app.git'
+            }
+        }
+        stage('Checking'){
+            steps{
+                echo "ye ho raha hai"
             }
         }
         stage('Build'){
